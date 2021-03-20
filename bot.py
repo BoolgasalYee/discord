@@ -10,9 +10,6 @@ from discord.ext import commands
 
 client = discord.Client()
 
-# 생성된 토큰을 입력해준다.
-token = "NzQwNTY5NDE4MTU2ODY3Njk0.Xyq7BA.cUqe2Co7P4lry-kVsQyyHLprjOE"
-
 bot = commands.Bot(command_prefix='_')
 
 # 봇이 구동되었을 때 보여지는 코드
@@ -86,4 +83,5 @@ async def on_message(message):
         for i in range(0, len(person)):
             await message.channel.send(person[i] + "   ==   " + teamname[i])
 
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
